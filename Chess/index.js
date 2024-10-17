@@ -35,13 +35,7 @@ function resetBoardColor(board) {
   }
 }
 
-function getCell(board, x, y) {
-  return board.querySelector(`[data-x='${x}'][data-y='${y}']`);
-}
-
 function movesBishop(board, x, y, boardSize) {
-  const cell = getCell(board, x, y);
-  setColor(cell);
   // to top left corner
   for (let i = x, j = y; i >= 0 && j >= 0; i--, j--) {
     setColor(board.querySelector(`[data-x='${i}'][data-y='${j}']`));
