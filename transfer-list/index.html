@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <title>Transfer List - DOM Drills</title>
+    <style>
+      body {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      .back {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        font-size: x-large;
+        cursor: pointer;
+      }
+      .transfer-list-header {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100px;
+        box-shadow: 1px 4px 6px 1px #ccc;
+      }
+      .container {
+        width: 80%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 5fr 1fr 5fr;
+        margin: 0 auto;
+        margin-top: 30px;
+        border-radius: 10px;
+      }
+      .box {
+        border: 1px solid #000;
+        padding: 20px;
+      }
+      .settings {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        flex-direction: column;
+      }
+      .settings button {
+        /* all: unset; */
+        width: 50px;
+        height: 50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        border-radius: 5px;
+      }
+      .list-item {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        gap: 20px;
+        flex-direction: row;
+      }
+      button:disabled {
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="back" onclick="history.back()">🔙</div>
+    <div class="transfer-list-header">
+      <h1>Transfer List</h1>
+    </div>
+    <div class="container">
+      <div class="box" id="first-box"></div>
+      <div class="box settings">
+        <button id="all-left-btn">
+          <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+        </button>
+        <button id="left-btn">
+          <i class="fa fa-angle-left" aria-hidden="true"></i>
+        </button>
+        <button id="right-btn">
+          <i class="fa fa-angle-right" aria-hidden="true"></i>
+        </button>
+        <button id="all-right-btn">
+          <i class="fa fa-angle-double-right" aria-hidden="true"></i>
+        </button>
+      </div>
+      <div class="box" id="second-box"></div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
